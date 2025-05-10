@@ -1,0 +1,97 @@
+---
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="Freddi in Ghana">
+	<h1 slot="title" class="title" id="start">
+	  <span class="name">
+		<span class="first">Freddi in</span>
+		<span class="last">Ghana</span>
+	  </span>
+	  <div id="waving">🇬🇭</div>
+	</h1>
+	<p>
+		In knapp vier Monaten ist es soweit: <a href="https://frederick.blaes.ing/" target="_blank">Ich</a> gehe für ein ganzes Jahr nach <a href="/#ghana">Ghana</a>! Dort werde ich in der küstennahen Stadt <a href="/#swedru">Swedru</a> an einer Sekundarschule im Informatikunterricht helfen. Dabei unterstützt mich die <a href="/#ijgd">IJGD</a> und das <a href="/#weltwaerts">Weltwärtsprogramm</a>. Doch ich bin auch auf euch angewiesen: Denn ich sammle <a href="/#spenden">Spenden</a> im Wert von insgesamt 3 000 Euro!
+	</p>
+
+	<h2 id="ghana">Ghana</h2>
+	<p>
+		Ghana ist äußerst stabiles und vielfältiges Land an der Südküste Westafrikas, welches zahlreiche Kulturen verbindet. Seit es als erstes westafrikanisches Land unabhängig von den britischen Kolonialmächten wurde, sicherte es durch seine Kakao- und Goldexporte Wohlstand für die Bevölkerung. Seit den 90er Jahren ist Ghana eine stabile Demokratie mit guten Handelsbeziehungen und einem wachsendem Mittelstand. 
+	</p>
+
+	<h2 id="swedru">Swedru</h2>
+	<p>
+		Swedru ist eine kleine Stadt in der Nähe der Hauptstadt Akkra und der Südküste Ghanas. Dort liegt auch die Swesbus: Swedru School of Business. Dort haben Jugentliche kostenlos die Chance, alles für ihr zukünftiges Arbeitsleben zu lernen!
+	</p>
+
+	<h2 id="weltwaerts">Weltwärts</h2>
+	<p>
+		Weltwärts ist ein staatliches Programm, welches jungen Erwachsenen gemeinnützige Projekte auf der ganzen Welt anbietet.
+	</p>
+
+	<h2 id="finanzierung">Finanzierung</h2>
+	<p>
+		Das Weltwärtsprogramm übernimmt 75% der Gesamtkosten. Den Rest bezahlt die IJGD. Damit die IJGD das auch zukünftigen Freiwilligen ermöglichen kann, sammle ich Spenden im Gesamtwert von 3 000 Euro, die an die IJGD gehen.
+	</p>
+
+	<h2 id="spenden">Spenden</h2>
+	<p>
+		Dieses Projekt ist nur mithilfe von Spenden möglich! Eine Spende ist entweder persönlich bei mir möglich, oder über die folgende Bankverbindung: [...]
+	</p>
+
+	<h2 id="steuern">Spenden bei der Steuer absetzen</h2>
+	<p>
+		Selbstverständlich sind jegliche Spenden von der Steuer absetzbar. Für Spenden im Wert von unter 300 € ist das sogar ohne Nachweis möglich. Für noch großzügigere Spenden stellt die IJGD auf Wunsch einen Spendenbescheid aus. Dazu möge man sich an mich persönlich wenden.
+	</p>
+</Layout>
+
+<style>
+.title {
+	position: relative;
+}
+.name {
+	display: flex;
+	flex-direction: column;
+}
+.name > .first {
+	font-size: 0.8em;
+	font-weight: 200;
+	color: rgb(var(--color-text));
+}
+#waving {
+	font-size: min(2em, calc(-1em + 40vw));
+	position: absolute;
+	right: 0px;
+	bottom: max(-0.5em, calc(-16rem + 1em));
+	animation: 1s waving ease-in-out;
+}
+@keyframes waving {
+	25% {
+	transform: rotateZ(-10deg);
+	}
+
+	50% {
+	transform: rotateZ(7deg);
+	}
+
+	75% {
+	transform: rotateZ(-5deg);
+	}
+}
+</style>
+
+<script>
+const waving = document.getElementById("waving") as HTMLDivElement;
+let animating = true;
+function animate() {
+	if (animating) return;
+	waving.style.animation = "none";
+	waving.offsetHeight;
+	waving.style.animation = null!;
+	animating = true;
+}
+waving.addEventListener("animationend", () => {
+	animating = false;
+});
+waving.addEventListener("mouseenter", animate);
+</script>

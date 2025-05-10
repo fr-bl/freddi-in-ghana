@@ -1,0 +1,36 @@
+---
+
+---
+
+<header>
+  <div class="content">
+    <nav aria-label="subpages">
+      <a href="/#start">Start</a>
+      <a href="/#spenden">Spenden</a>
+    </nav>
+    <nav aria-label="about me">
+      <a href="https://frederick.blaes.ing/" target="_blank">Über mich</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  header {
+    font-family: var(--font-family-layout);
+    padding: var(--size-padding-layout);
+  }
+  .content {
+    max-width: var(--size-content-width);
+    margin: 0px auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: max(1ch, min(var(--size-gap), calc(10vw - 1.2em)));
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    gap: max(1ch, min(var(--size-gap), calc(10vw - 1.2em)));
+  }
+</style>

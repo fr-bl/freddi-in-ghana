@@ -1,0 +1,30 @@
+---
+import "@styles/global.css";
+import "@fontsource-variable/hanken-grotesk";
+import "@fontsource-variable/source-sans-3";
+import "@fontsource/ubuntu-mono";
+
+import Head, { type Props as HeadProps } from "@components/Head.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import CursorAura from "@components/CursorAura.astro";
+
+import { slide } from "astro:transitions";
+
+export type Props = HeadProps;
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="de" transition:animate="none">
+  <Head {...Astro.props} />
+  <body>
+    <Header />
+    <main transition:animate={slide({ duration: 150 })}>
+      <slot name="title"><h1>{title}</h1></slot>
+      <slot />
+    </main>
+    <Footer />
+    <CursorAura />
+  </body>
+</html>

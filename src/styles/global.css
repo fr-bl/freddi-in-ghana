@@ -1,0 +1,94 @@
+:root {
+  --color-background: 0, 70, 55;
+  --color-text: 255, 255, 255;
+  --color-highlight: 70, 180, 120;
+  --color-mantle: 24, 34, 99;
+  --size-content-width: 800px;
+  --size-gap: 2em;
+  --size-padding-layout: 2em;
+  --size-padding-content: 0.3em;
+  --size-border-radius: 0.2em;
+  --size-border-width: 2px;
+  --font-family-layout: "Hanken Grotesk Variable", sans-serif;
+  --font-family-content: "Source Sans 3 Variable", sans-serif;
+  --font-family-mono: "Ubuntu Mono", monospace;
+  --duration-short: 0.15s;
+}
+
+body {
+  margin: 0px;
+  font-family: var(--font-family-content);
+  font-size: 1.3rem;
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-text));
+  text-align: justify;
+  hyphens: auto;
+}
+
+main {
+  max-width: var(--size-content-width);
+  margin: 0px auto;
+  min-height: calc(100vh - 22rem);
+  padding: var(--size-padding-layout);
+}
+
+a {
+  color: unset;
+  text-decoration: unset;
+  background-image: linear-gradient(
+    rgb(var(--color-highlight)),
+    rgb(var(--color-highlight))
+  );
+  background-size: 100% 0.2em;
+  background-position-y: 100%;
+  background-position-x: 0%;
+  background-repeat: no-repeat;
+  transition: background-size var(--duration-short);
+}
+
+a:hover,
+a:focus,
+a:active {
+  background-size: 100% 1.3em;
+}
+
+::selection {
+  background: rgb(var(--color-highlight));
+  color: rgb(var(--color-text));
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-layout);
+  text-shadow: 0 0 300px rgba(var(--color-text), 0.5);
+}
+
+h1 {
+  font-size: min(7em, 20vw);
+  font-weight: 800;
+  line-height: 0.8em;
+  letter-spacing: -0.02em;
+  color: rgb(var(--color-highlight));
+  margin-top: 0px;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+code,
+pre,
+kbd {
+  background: rgb(var(--color-mantle));
+  border-radius: var(--size-border-radius);
+  padding: 0 var(--size-padding-content);
+  font-family: var(--font-family-mono);
+}
+
+pre {
+  padding: var(--size-padding-content);
+}
