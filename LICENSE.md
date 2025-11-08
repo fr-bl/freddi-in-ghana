@@ -30,7 +30,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 ## Exceptions
 
-The following files are not distributed under the MIT license:
+The following files are not distributed under the license above:
 
 
 ### Copyright © `Finn Schneider` All Rights Reserved
