@@ -6,9 +6,7 @@ import icon from "astro-icon";
 export default defineConfig({
 	integrations: [icon()],
 	image: {
-		service: import.meta.env.DEV
-			? passthroughImageService()
-			: undefined,
+		service: import.meta.env.DEV ? passthroughImageService() : undefined,
 	},
 	vite: {
 		server: {
