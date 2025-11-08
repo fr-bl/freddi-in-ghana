@@ -1,116 +1,201 @@
 ---
+import portraitSrc from "@assets/portrait.jpg";
+import donateSrc from "@assets/donate.jpg";
+
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
 import Layout from "@layouts/Layout.astro";
+import Row from "@components/Row.astro";
+import Figure from "@components/Figure.astro";
+import Donate from "@components/Donate.astro";
+import Section from "@components/Section.astro";
+import Answer from "@components/Answer.astro";
+import Action from "@components/Action.astro";
 ---
 
-<Layout title="Freddi in Ghana">
-	<h1 slot="title" class="title" id="start">
-	  <span class="name">
-		<span class="first">Freddi in</span>
-		<span class="last">Ghana</span>
-	  </span>
-	  <div id="waving">👋</div>
-	</h1>
-	<p>
-		Hallo, ich bin Frederick und habe als frischer Erwachsener gerade meine letzten Schultage hinter mir gelassen. Als nächsten Schritt im Leben möchte ich einen <b>Weltwärts-Freiwilligendienst</b> bei der <b>ijgd</b> machen, um die Welt besser kennenzulernen. Dafür fliege ich ein Jahr nach Ghana und suche nach <b>Spendern</b>, die mich auf meiner Reise unterstützen!
-	</p>
+<Layout>
 
-	<h2 id="was-mache-ich-in-ghana">Was mache ich in Ghana?</h2>
-	<p>
-		Diesen September fliege ich zusammen mit einem Mitfreiwilligen naach <b>Ghana</b> an der Südküste Westafrikas! Dort verbringen wir ein ganzes Jahr in der Stadt Agona Swedru. Neben Sport, Kultur und Märkten befindet sich dort auch die <b>Swedru School of Business</b>. Dort werden wir im Informatikunterricht für Jugendliche assistieren und an IT-Projekten arbeiten!
-	</p>
+<Section>
+<Row reverse>
+<Figure alt="Foto von mir" caption="© Finn" src={portraitSrc}/>
 
-	<h2 id="was-ist-weltwaerts">Was ist Weltwärts?</h2>
-	<p>
-		Weltwärts ist ein <b>entwicklungspolitisches Programm</b> vom Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung (BMZ). Es ermöglicht jungen Erwachsenen Freiwilligendienste im globalen Süden, um dort wertvolle Erfahrungen für das Leben zu sammeln. Diese Freiwilligendienste sind keine Entwicklungshilfe für die Zielländer, sondern ein <b>Lerndienst</b> für die Freiwilligen. Weltwärts organisiert die Projekte nicht selber, sondern weist dafür sogenannte Entseendeorganisationen aus.
-	</p>
+<div>
+<h1>
+Hallo, ich bin Freddi
+</h1>
 
-	<h2 id="was-ist-die-ijgd">Was ist die ijgd?</h2>
-	<p>
-		Der internationale Jugendgemeinschaftsdienste e.V. (ijgd) ist ein unabhängiger und <b>gemeinnütziger</b> Verein, der zahlreiche Projekte mit Jugendlichen und jungen Erwachsenen unterstützt. Die ijgd ist die <b>Entsendeorganisation</b>, die mein Projekt in Ghana organisiert. Sie bezahlt auch einen Teil der Kosten im Voraus. Daher ist sie darauf angewiesen, diese Kosten in Form von Spenden wieder auszugleichen.
-	</p>
+<p>
+Ich gehe für ein Jahr als weltwärts-Freiwilliger nach Ghana, um kulturellen Austausch zu fördern! Um das auch zukünftigen Freiwilligen zu ermöglichen, sammle ich Spenden.
+</p>
 
-	<h2 id="wofuer-sammle-ich-spenden">Wofür sammle ich Spenden?</h2>
-	<p>
-		Die Spenden sollen die Kosten eines Freiwilligenjahrs decken. Darin entahlent sind Kosten für Vor- und Nachbereitung, Impfungen, Verpflegung, Unterbringung, Taschengeld und Versicherungen. Diese Kosten betragen insgesamt 12 000€, wovon 75% vom BMZ übernommen werden. Den Rest übernimmt die ijgd im Voraus. Damit die ijgd das auch zukünftigen Weltwärts-Freiwilligen ermöglichen kann, sammle ich Spenden von insgesamt <b>3 000€ für die ijgd</b>.
-	</p>
+<Donate class="standalone" />
+<Action external href="https://frederick.blaes.ing/">
+Über mich
+</Action>
+</div>
+</Row>
+</Section>
 
-	<h2 id="wie-kann-man-spenden">Wie kann man spenden?</h2>
-	<p>
-		Ich freue mich über jede Spende! Es ist möglich, einmalig, oder über das ganze Jahr hinweg zu spenden. Dafür gibt es zwei Möglichkeiten:
-	</p>
-	<ul>
-		<li><b>bei mir</b> persönlich</li>
-		<li>über folgende <b>Bankverbindung</b>:</li>
-	</ul>
-	<dl>
-		<dt>Kontoinhaber</dt>
-		<dd>ijgd</dd>
-		<dt>Bank</dt>
-		<dd>Bank für Sozialwirtschaft Berlin</dd>
-		<dt>BIC</dt>
-		<dd>BFSWDE33BER</dd>
-		<dt>IBAN</dt>
-		<dd>DE54100205002592511007</dd>
-		<dt>Verwendungszweck</dt>
-		<dd>Spende Freiwilligendienst 2025-26</dd>
-	</dl>
-	<p>
-		Wer spendet, kann sich in jeden Fall gerne an mich wenden, damit ich das auf der Spendenliste eintragen kann!
-	</p>
+<Section>
+<h2 id="blog">
+Blog
+</h2>
 
-	<h2 id="spenden-steuerlich-absetzen">Spenden steuerlich absetzen</h2>
-	<p>
-		Selbstverständlich können Spenden steuerlich abgesetzt werden! Für Spenden unter 300€ wird dafür nur die Quittung der Überweisung nötig.. Für höhere Spenden kann man sich gerne an mich wenden, um eine Spendenbescheinigung von der ijgd zu erhalten.
-	</p>
+<p id="in-arbeit">
+In Arbeit
+<Icon name="eva:car-outline" id="in-arbeit-icon" />
+</p>
+</Section>
+
+<Section>
+<h2 id="faq">
+Häufig gestellte Fragen
+</h2>
+</Section>
+
+<Section>
+<Answer name="faq" title="Was mache ich in Ghana?">
+<p>
+Ab September 2025 lebe ich für ein Jahr in Agona Swedru bei meiner super-netten
+Gastfamilie. Hier in Swedru gehen mein Mitfreiwilliger Fabian und ich zur
+Swedru School of Business, und assistieren im Informatikunterricht und in
+IT-Projekten. Die Zeit nutzen wir, um mehr über das Leben in Ghana zu lernen.
+</p>
+</Answer>
+</Section>
+
+<Section>
+<Answer name="faq" title="Was ist weltwärts?">
+<p>
+Die Nord-Süd-Komponente vom weltwärts-Programm ermöglicht jungen Erwachsenen
+aus Deutschland einen Freiwilligendienst im globalen Süden. Ein
+weltwärts-Freiwilligendienst ist keine Entwicklungshilfe, sondern ein
+Lerndienst und soll kulturellen Austausch und soziales Engagement fördern. Das
+weltwärts-Programm wird vom Bundesministerium für wirtschaftliche Zusammenarbeit
+und Entwicklung (BMZ) finanziert.
+</p>
+
+<Action external href="https://www.weltwaerts.de/de/">
+Über weltwärts
+</Action>
+</Answer>
+</Section>
+
+<Section>
+<Answer name="faq" title="Was sind die ijgd?">
+<p>
+Die Internationalen Jugendgemeinschaftsdienste (ijgd) sind ein unabhängiger,
+gemeinnütziger Verein, der Freiwilligendienste für junge Erwachsene
+veranstaltet. Die ijgd sind meine Entsendeorganisation, die mein
+weltwärts-Freiwilligenjahr organisiert und mit der Partnerorganisation
+vermittelt.
+</p>
+
+<Action external href="https://www.ijgd.de/">
+Über die ijgd
+</Action>
+</Answer>
+</Section>
+
+<Section>
+<Answer name="faq" title="Was kostet ein weltwärts-Freiwilligenjahr?">
+<p>
+Die Kosten für ein Jahr betragen insgesamt 12 000 Euro, wovon 75% vom
+<abbr title="Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung">
+BMZ</abbr> übernommen werden. Darin enthalten sind die Kosten für Seminare,
+Impfungen, Versicherungen, Flüge, Unterbringung, Verpflegung und Taschengeld.
+</p>
+</Answer>
+</Section>
+
+<Section>
+<h2 id="spenden">
+Spenden
+</h2>
+</Section>
+
+<Section>
+<Row>
+<Figure alt="Puzzleteil mit einem Herz-Symbol" caption="© Pexels" src={donateSrc}/>
+<div>
+<h3>
+Jede Spende zählt!
+</h3>
+
+<p>
+Vielen Dank an alle, die spenden wollen, oder es schon getan haben! Die Kosten
+für mein Freiwilligenjahr wurden bereits vom
+<abbr title="Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung">
+BMZ</abbr> und den <abbr title="Internationalen Jugendgemeinschaftsdiensten">
+ijgd</abbr> gedeckt. Um das
+auch zukünftigen Freiwilligen zu ermöglichen, sammle ich Spenden von insgesamt
+3 000 Euro für die ijgd.
+</p>
+</div>
+</Row>
+</Section>
+
+<Section>
+<Answer name="spenden" title="Wie kann man spenden?">
+<p>
+Ich freue mich über jede Spende! Man kann einmalig, oder auch über das ganze
+Jahr hinweg spenden. Diese Spenden können in Bar an mich, oder an die folgende
+Bankverbindung übermittelt werden.
+</p>
+</Answer>
+</Section>
+
+<Section>
+<Answer name="spenden" title="Wie lautet die Bankverbindung?">
+<dl>
+<dt>Kontoinhaber</dt>
+<dd>ijgd</dd>
+
+<dt>Bank</dt>
+<dd>Bank für Sozialwirtschaft Berlin</dd>
+
+<dt>BIC</dt>
+<dd>BFSWDE33BER</dd>
+
+<dt>IBAN</dt>
+<dd>DE54 1002 0500 2592 5110 07</dd>
+
+<dt>Verwendungszweck</dt>
+<dd>Spende Freiwilligendienst 2025-26</dd>
+</dl>
+
+<p>
+Diese Bankverbindung wurde exklusiv für mich eingerichtet. Der Verwendungszweck
+darf nicht geändert werden.
+</p>
+</Answer>
+</Section>
+
+<Section>
+<Answer name="spenden" title="Wie kann man Spenden steuerlich absetzen?">
+<p>
+Für Spenden unter 300 Euro reicht dafür der Beleg der Überweisung. Für höhere
+Spenden kann man sich gerne an mich wenden, um eine Spendenbescheinigung von
+der ijgd erstellen zu lassen.
+</p>
+</Section>
+
 </Layout>
 
 <style>
-.title {
-	position: relative;
+h1 {
+  margin-top: 0;
 }
-.name {
-	display: flex;
-	flex-direction: column;
-}
-.name > .first {
-	font-size: 0.8em;
-	font-weight: 200;
-	color: rgb(var(--color-text));
-}
-#waving {
-	font-size: min(2em, calc(-1em + 40vw));
-	position: absolute;
-	right: 0px;
-	bottom: max(-0.5em, calc(-16rem + 1em));
-	animation: 1s waving ease-in-out;
-}
-@keyframes waving {
-	25% {
-	transform: rotateZ(-10deg);
-	}
 
-	50% {
-	transform: rotateZ(7deg);
-	}
+#in-arbeit {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--gap-inline);
+}
 
-	75% {
-	transform: rotateZ(-5deg);
-	}
+#in-arbeit-icon {
+  font-size: 1.3rem;
 }
 </style>
-
-<script>
-const waving = document.getElementById("waving") as HTMLDivElement;
-let animating = true;
-function animate() {
-	if (animating) return;
-	waving.style.animation = "none";
-	waving.offsetHeight;
-	waving.style.animation = null!;
-	animating = true;
-}
-waving.addEventListener("animationend", () => {
-	animating = false;
-});
-waving.addEventListener("mouseenter", animate);
-</script>

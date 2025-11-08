@@ -1,0 +1,32 @@
+:root {
+	--color-background: 250, 250, 245;
+	--color-background-action: 0, 0, 0;
+	--color-background-donate: 240, 100, 130;
+	--color-background-red: 240, 220, 220;
+	--color-background-yellow: 240, 240, 210;
+	--color-background-green: 210, 240, 220;
+	--color-border: 40, 40, 20;
+	--color-border-yellow: 210, 210, 200;
+	--color-border-donate: 220, 70, 100;
+	--color-text: 0, 0, 0;
+	--color-text-content: 40, 40, 20;
+	--color-text-donate: 250, 250, 245;
+	--color-text-action: 250, 250, 245;
+	--color-shadow: 0, 0, 0;
+	--width-layout: 1000px;
+	--width-content: 600px;
+	--width-border: 1px;
+	--gap-content: 1rem;
+	--gap-layout: 4rem;
+	--gap-inline: 0.3em;
+	--padding-content: 1rem;
+	--padding-layout: 2rem;
+	--padding-scroll: 5em;
+	--radius-content: 1rem;
+	--radius-layout: 2rem;
+	--weight-content: 300;
+	--weight-title: 400;
+	--weight-link: 500;
+	--duration-animation: 0.5s;
+	--offset-reveal: 3rem;
+}

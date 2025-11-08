@@ -1,20 +1,35 @@
 ---
-
+import { Icon } from "astro-icon/components";
+import Row from "@components/Row.astro";
+import Link from "@components/Link.astro";
 ---
 
-<footer>
-  <div class="content">© Frederick Bläsing 2025</div>
+<footer class="footer">
+<Row>
+<p id="#lizenz">
+Copyright © 2025
+<Link href="https://creativecommons.org/licenses/by/4.0/">
+CC BY 4.0
+</Link>
+Frederick Bläsing
+</p>
+
+<address id="kontakt">
+<Link href="mailto:ghana@frederick.blaes.ing">
+<Icon name="eva:email-outline" title="E-Mail" />
+</Link>
+</address>
+</Row>
 </footer>
 
 <style>
-  footer {
-    font-family: var(--font-family-layout);
-    font-weight: var(--weight-light);
-    padding: var(--size-padding-layout);
-    text-align: center;
-  }
-  .content {
-    max-width: var(--size-content-width);
-    margin: 0px auto;
-  }
+.footer {
+  max-width: var(--width-layout);
+  margin: var(--padding-layout) auto;
+}
+
+#kontakt {
+  font-size: 1.3rem;
+  text-align: right;
+}
 </style>

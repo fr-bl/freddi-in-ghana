@@ -1,17 +1,18 @@
 {
-  "name": "",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@fontsource-variable/hanken-grotesk": "^5.2.5",
-    "@fontsource-variable/source-sans-3": "^5.2.7",
-    "@fontsource/ubuntu-mono": "^5.2.5",
-    "astro": "^5.7.12"
-  }
+	"name": "",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@fontsource-variable/hanken-grotesk": "^5.2.8",
+		"@iconify-json/eva": "^1.2.3",
+		"astro": "^5.14.5",
+		"astro-icon": "^1.1.5",
+		"sharp": "^0.34.4"
+	}
 }

@@ -1,4 +1,9 @@
-# The MIT License (MIT)
+# License
+
+Except for the files listed under Exceptions, this project
+is licensed under the MIT license below.
+
+## The MIT License (MIT)
 
 Copyright © `2025` `Frederick Bläsing`
 
@@ -22,3 +27,25 @@ HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
 WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
+
+## Exceptions
+
+The following files are not distributed under the MIT license:
+
+
+### Copyright © `Finn Schneider` All Rights Reserved
+
+- `src/assets/portrait.jpg`
+
+### Copyright © `Pexels` Pexels License
+
+- `src/assets/donate.jpg`
+
+### Copyright © `Akveo` MIT License
+
+- `public/favicon.ico`
+- `public/favicon-16x16.png`
+- `public/favicon-32x32.png`
+- `public/apple-touch-icon.png`
+- `public/android-chrome-192x192.png`
+- `public/android-chrome-512x512.png`

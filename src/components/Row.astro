@@ -1,0 +1,41 @@
+---
+export interface Props extends astroHTML.JSX.HTMLAttributes {
+	reverse?: boolean;
+}
+
+const {
+	class: className,
+	"class:list": classList,
+	reverse = false,
+	...props
+} = Astro.props;
+---
+
+<div class:list={["row", {reverse}, className, classList]} {...props}>
+<slot />
+</div>
+
+<style>
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--gap-layout);
+
+  &.reverse {
+    flex-direction: row-reverse;
+  }
+
+  > * {
+    flex: 1 1 0;
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 650px) {
+  .row {
+    flex-direction: column !important;
+  }
+}
+</style>

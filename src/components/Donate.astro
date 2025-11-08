@@ -1,0 +1,21 @@
+---
+import Action, { type Props as ActionProps } from "@components/Action.astro";
+import { Icon } from "astro-icon/components";
+
+type Props = ActionProps;
+
+const { class: className, "class:list": classList, ...props } = Astro.props;
+---
+
+<Action href="/#spenden" class:list={["donate", className, classList]} {...props}>
+<Icon name="eva:heart-fill" />
+Jetzt Spenden
+</Action>
+
+<style>
+.donate {
+  background-color: rgb(var(--color-background-donate));
+  color: rgb(var(--color-text-donate)) !important;
+  border-color: rgb(var(--color-border-donate));
+}
+</style>

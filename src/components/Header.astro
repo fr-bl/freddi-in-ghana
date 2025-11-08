@@ -1,36 +1,65 @@
 ---
-
+import Donate from "@components/Donate.astro";
+import { Icon } from "astro-icon/components";
+import Link from "@components/Link.astro";
 ---
 
-<header>
-  <div class="content">
-    <nav aria-label="subpages">
-      <a href="/#start">Start</a>
-      <a href="/#wie-kann-man-spenden">Spenden</a>
-    </nav>
-    <nav aria-label="about me">
-      <a href="https://frederick.blaes.ing/" target="_blank">Über mich</a>
-    </nav>
-  </div>
+<header class="header">
+<nav class="nav">
+
+<Link class="nav-root" href="/#">
+<Icon name="eva:globe-2-outline"/>
+Freddi in Ghana
+</Link>
+
+<div class="nav-group">
+<Link href="/#blog">
+Blog
+</Link>
+
+<Link href="/#faq">
+FAQ
+</Link>
+
+<Donate />
+</div>
+
+</nav>
 </header>
 
 <style>
-  header {
-    font-family: var(--font-family-layout);
-    padding: var(--size-padding-layout);
-  }
-  .content {
-    max-width: var(--size-content-width);
-    margin: 0px auto;
+.header {
+  max-width: var(--width-layout);
+  margin: var(--padding-layout) auto;
+}
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: max(1ch, min(var(--size-gap), calc(10vw - 1.2em)));
+.nav {
+  width: 100%;
+  white-space: nowrap;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap-content);
+}
+
+@media (max-width: 700px) {
+  .nav {
+    flex-direction: column;
   }
-  nav {
-    display: flex;
-    align-items: center;
-    gap: max(1ch, min(var(--size-gap), calc(10vw - 1.2em)));
-  }
+}
+
+.nav-root {
+  font-size: 1.5em;
+  font-weight: var(--weight-title);
+}
+
+.nav-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap-content);
+}
 </style>

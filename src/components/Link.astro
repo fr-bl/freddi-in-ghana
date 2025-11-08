@@ -1,0 +1,31 @@
+---
+import { Icon } from "astro-icon/components";
+
+export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {
+  external?: boolean;
+}
+
+const { external = false, class: className, "class:list": classList, ...props } = Astro.props;
+---
+
+<a
+  class:list={["link", className, classList]}
+  target={external ? "_blank" : undefined}
+  {...props}
+>
+<slot />
+{external && (<Icon name="eva:external-link-outline" />)}
+</a>
+
+<style>
+.link {
+  text-decoration: unset;
+  font-weight: var(--weight-link);
+  color: unset;
+
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--gap-inline);
+}
+</style>
