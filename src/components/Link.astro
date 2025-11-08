@@ -2,10 +2,15 @@
 import { Icon } from "astro-icon/components";
 
 export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {
-  external?: boolean;
+	external?: boolean;
 }
 
-const { external = false, class: className, "class:list": classList, ...props } = Astro.props;
+const {
+	external = false,
+	class: className,
+	"class:list": classList,
+	...props
+} = Astro.props;
 ---
 
 <a

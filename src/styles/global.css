@@ -3,20 +3,22 @@
 
 	height: 100vh;
 	overflow: scroll;
-	
+
 	scroll-behavior: smooth;
 	scroll-padding-top: var(--padding-scroll);
 }
 
 body {
-  background: rgb(var(--color-background));
-  color: rgb(var(--color-text));
+	background: rgb(var(--color-background));
+	color: rgb(var(--color-text));
 	font-size: 1.1rem;
 	margin: var(--padding-layout) var(--padding-content);
 	padding-bottom: 1px;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
 	text-wrap: balance;
 	font-weight: var(--weight-layout);
 }
