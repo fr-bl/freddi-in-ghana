@@ -5,54 +5,53 @@ const { class: className, "class:list": classList, ...props } = Astro.props;
 ---
 
 <section class:list={["section", className, classList]} {...props}>
-<slot />
+  <slot />
 </section>
 
 <style>
-.section {
-  &.hide {
-    opacity: 0%;
+  .section {
+    &.hide {
+      opacity: 0%;
+    }
+
+    &.reveal {
+      animation: var(--duration-animation) ease-out 0s 1 revealSection forwards;
+    }
   }
 
-  &.reveal {
-    animation: var(--duration-animation) ease-out 0s 1 revealSection forwards;
-  }
-}
+  @keyframes revealSection {
+    0% {
+      opacity: 0%;
+      transform: translateY(var(--offset-reveal));
+    }
 
-@keyframes revealSection {
-  0% {
-    opacity: 0%;
-    transform: translateY(var(--offset-reveal));
+    100% {
+      opacity: 100%;
+      transform: translateY(0);
+    }
   }
-
-  100% {
-    opacity: 100%;
-    transform: translateY(0);
-  }
-}
 </style>
 
 <script>
+  const observerOptions = {
+    rootMargin: "0px",
+    scrollMargin: "-180px",
+    threshold: 0.0,
+  };
 
-const observerOptions = {
-  rootMargin: "0px",
-  scrollMargin: "-180px",
-  threshold: 0.0,
-};
-
-const observer = new IntersectionObserver(function (entries, observer) {
-  for (const entry of entries) {
-    if (entry.isIntersecting) {
-      entry.target.classList.remove("hide");
-      entry.target.classList.add("reveal");
+  const observer = new IntersectionObserver(function (entries, observer) {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("hide");
+        entry.target.classList.add("reveal");
+      }
     }
-  }
-}, observerOptions);
-const sections = document.getElementsByClassName("section");
+  }, observerOptions);
+  const sections = document.getElementsByClassName("section");
 
-for (const section of sections) {
-  console.log(section);
-  section.classList.add("hide");
-  observer.observe(section);
-}
+  for (const section of sections) {
+    console.log(section);
+    section.classList.add("hide");
+    observer.observe(section);
+  }
 </script>

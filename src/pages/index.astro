@@ -4,198 +4,194 @@ import portraitSrc from "@assets/portrait.jpg";
 
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
+import { Language } from "@i18n";
 
 import Action from "@components/Action.astro";
 import Answer from "@components/Answer.astro";
 import Donate from "@components/Donate.astro";
 import Figure from "@components/Figure.astro";
 import Row from "@components/Row.astro";
+import Wip from "@components/Wip.astro";
 import Section from "@components/Section.astro";
-import Layout from "@layouts/Layout.astro";
+import Layout from "@layouts/Base.astro";
+
+const language = Language.German;
 ---
 
-<Layout>
+<Layout language={language}>
+  <Section>
+    <Row reverse>
+      <Figure
+        alt="Foto von mir"
+        caption="© Finn"
+        src={portraitSrc}
+        width={470}
+      />
 
-<Section>
-<Row reverse>
-<Figure alt="Foto von mir" caption="© Finn" src={portraitSrc} width={470}/>
+      <div>
+        <h1>Hallo, ich bin Freddi</h1>
 
-<div>
-<h1>
-Hallo, ich bin Freddi
-</h1>
+        <p>
+          Ich gehe für ein Jahr als weltwärts-Freiwilliger nach Ghana, um
+          kulturellen Austausch zu fördern! Um das auch zukünftigen Freiwilligen
+          zu ermöglichen, sammle ich Spenden.
+        </p>
 
-<p>
-Ich gehe für ein Jahr als weltwärts-Freiwilliger nach Ghana, um kulturellen Austausch zu fördern! Um das auch zukünftigen Freiwilligen zu ermöglichen, sammle ich Spenden.
-</p>
+        <Donate language={language} class="standalone" />
+        <Action external href="https://frederick.blaes.ing/">
+          Über mich
+        </Action>
+      </div>
+    </Row>
+  </Section>
 
-<Donate class="standalone" />
-<Action external href="https://frederick.blaes.ing/">
-Über mich
-</Action>
-</div>
-</Row>
-</Section>
+  <Section>
+    <h2 id="blog">Blog</h2>
 
-<Section>
-<h2 id="blog">
-Blog
-</h2>
+    <Wip language={language} />
+  </Section>
 
-<p id="in-arbeit">
-In Arbeit
-<Icon name="eva:car-outline" id="in-arbeit-icon" />
-</p>
-</Section>
+  <Section>
+    <h2 id="faq">Häufig gestellte Fragen</h2>
+  </Section>
 
-<Section>
-<h2 id="faq">
-Häufig gestellte Fragen
-</h2>
-</Section>
+  <Section>
+    <Answer name="faq" title="Was mache ich in Ghana?">
+      <p>
+        Ab September 2025 lebe ich für ein Jahr in Agona Swedru bei meiner
+        super-netten Gastfamilie. Hier in Swedru gehen mein Mitfreiwilliger
+        Fabian und ich zur Swedru School of Business, und assistieren im
+        Informatikunterricht und in IT-Projekten. Die Zeit nutzen wir, um mehr
+        über das Leben in Ghana zu lernen.
+      </p>
+    </Answer>
+  </Section>
 
-<Section>
-<Answer name="faq" title="Was mache ich in Ghana?">
-<p>
-Ab September 2025 lebe ich für ein Jahr in Agona Swedru bei meiner super-netten
-Gastfamilie. Hier in Swedru gehen mein Mitfreiwilliger Fabian und ich zur
-Swedru School of Business, und assistieren im Informatikunterricht und in
-IT-Projekten. Die Zeit nutzen wir, um mehr über das Leben in Ghana zu lernen.
-</p>
-</Answer>
-</Section>
+  <Section>
+    <Answer name="faq" title="Was ist weltwärts?">
+      <p>
+        Die Nord-Süd-Komponente vom weltwärts-Programm ermöglicht jungen
+        Erwachsenen aus Deutschland einen Freiwilligendienst im globalen Süden.
+        Ein weltwärts-Freiwilligendienst ist keine Entwicklungshilfe, sondern
+        ein Lerndienst und soll kulturellen Austausch und soziales Engagement
+        fördern. Das weltwärts-Programm wird vom Bundesministerium für
+        wirtschaftliche Zusammenarbeit und Entwicklung (BMZ) finanziert.
+      </p>
 
-<Section>
-<Answer name="faq" title="Was ist weltwärts?">
-<p>
-Die Nord-Süd-Komponente vom weltwärts-Programm ermöglicht jungen Erwachsenen
-aus Deutschland einen Freiwilligendienst im globalen Süden. Ein
-weltwärts-Freiwilligendienst ist keine Entwicklungshilfe, sondern ein
-Lerndienst und soll kulturellen Austausch und soziales Engagement fördern. Das
-weltwärts-Programm wird vom Bundesministerium für wirtschaftliche Zusammenarbeit
-und Entwicklung (BMZ) finanziert.
-</p>
+      <Action external href="https://www.weltwaerts.de/de/">
+        Über weltwärts
+      </Action>
+    </Answer>
+  </Section>
 
-<Action external href="https://www.weltwaerts.de/de/">
-Über weltwärts
-</Action>
-</Answer>
-</Section>
+  <Section>
+    <Answer name="faq" title="Was sind die ijgd?">
+      <p>
+        Die Internationalen Jugendgemeinschaftsdienste (ijgd) sind ein
+        unabhängiger, gemeinnütziger Verein, der Freiwilligendienste für junge
+        Erwachsene veranstaltet. Die ijgd sind meine Entsendeorganisation, die
+        mein weltwärts-Freiwilligenjahr organisiert und mit der
+        Partnerorganisation vermittelt.
+      </p>
 
-<Section>
-<Answer name="faq" title="Was sind die ijgd?">
-<p>
-Die Internationalen Jugendgemeinschaftsdienste (ijgd) sind ein unabhängiger,
-gemeinnütziger Verein, der Freiwilligendienste für junge Erwachsene
-veranstaltet. Die ijgd sind meine Entsendeorganisation, die mein
-weltwärts-Freiwilligenjahr organisiert und mit der Partnerorganisation
-vermittelt.
-</p>
+      <Action external href="https://www.ijgd.de/"> Über die ijgd </Action>
+    </Answer>
+  </Section>
 
-<Action external href="https://www.ijgd.de/">
-Über die ijgd
-</Action>
-</Answer>
-</Section>
+  <Section>
+    <Answer name="faq" title="Was kostet ein weltwärts-Freiwilligenjahr?">
+      <p>
+        Die Kosten für ein Jahr betragen insgesamt 12 000 Euro, wovon 75% vom
+        <abbr
+          title="Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung"
+        >
+          BMZ</abbr
+        > übernommen werden. Darin enthalten sind die Kosten für Seminare, Impfungen,
+        Versicherungen, Flüge, Unterbringung, Verpflegung und Taschengeld.
+      </p>
+    </Answer>
+  </Section>
 
-<Section>
-<Answer name="faq" title="Was kostet ein weltwärts-Freiwilligenjahr?">
-<p>
-Die Kosten für ein Jahr betragen insgesamt 12 000 Euro, wovon 75% vom
-<abbr title="Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung">
-BMZ</abbr> übernommen werden. Darin enthalten sind die Kosten für Seminare,
-Impfungen, Versicherungen, Flüge, Unterbringung, Verpflegung und Taschengeld.
-</p>
-</Answer>
-</Section>
+  <Section>
+    <h2 id="spenden">Spenden</h2>
+  </Section>
 
-<Section>
-<h2 id="spenden">
-Spenden
-</h2>
-</Section>
+  <Section>
+    <Row>
+      <Figure
+        alt="Puzzleteil mit einem Herz-Symbol"
+        caption="© Pexels"
+        src={donateSrc}
+        width={470}
+      />
+      <div>
+        <h3>Jede Spende zählt!</h3>
 
-<Section>
-<Row>
-<Figure alt="Puzzleteil mit einem Herz-Symbol" caption="© Pexels" src={donateSrc} width={470}/>
-<div>
-<h3>
-Jede Spende zählt!
-</h3>
+        <p>
+          Vielen Dank an alle, die spenden wollen, oder es schon getan haben!
+          Die Kosten für mein Freiwilligenjahr wurden bereits vom
+          <abbr
+            title="Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung"
+          >
+            BMZ</abbr
+          > und den <abbr title="Internationalen Jugendgemeinschaftsdiensten">
+            ijgd</abbr
+          > gedeckt. Um das auch zukünftigen Freiwilligen zu ermöglichen, sammle
+          ich Spenden von insgesamt 3 000 Euro für die ijgd.
+        </p>
+      </div>
+    </Row>
+  </Section>
 
-<p>
-Vielen Dank an alle, die spenden wollen, oder es schon getan haben! Die Kosten
-für mein Freiwilligenjahr wurden bereits vom
-<abbr title="Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung">
-BMZ</abbr> und den <abbr title="Internationalen Jugendgemeinschaftsdiensten">
-ijgd</abbr> gedeckt. Um das
-auch zukünftigen Freiwilligen zu ermöglichen, sammle ich Spenden von insgesamt
-3 000 Euro für die ijgd.
-</p>
-</div>
-</Row>
-</Section>
+  <Section>
+    <Answer name="spenden" title="Wie kann man spenden?">
+      <p>
+        Ich freue mich über jede Spende! Man kann einmalig, oder auch über das
+        ganze Jahr hinweg spenden. Diese Spenden können in Bar an mich, oder an
+        die folgende Bankverbindung übermittelt werden.
+      </p>
+    </Answer>
+  </Section>
 
-<Section>
-<Answer name="spenden" title="Wie kann man spenden?">
-<p>
-Ich freue mich über jede Spende! Man kann einmalig, oder auch über das ganze
-Jahr hinweg spenden. Diese Spenden können in Bar an mich, oder an die folgende
-Bankverbindung übermittelt werden.
-</p>
-</Answer>
-</Section>
+  <Section>
+    <Answer name="spenden" title="Wie lautet die Bankverbindung?">
+      <dl>
+        <dt>Kontoinhaber</dt>
+        <dd>ijgd</dd>
 
-<Section>
-<Answer name="spenden" title="Wie lautet die Bankverbindung?">
-<dl>
-<dt>Kontoinhaber</dt>
-<dd>ijgd</dd>
+        <dt>Bank</dt>
+        <dd>Bank für Sozialwirtschaft Berlin</dd>
 
-<dt>Bank</dt>
-<dd>Bank für Sozialwirtschaft Berlin</dd>
+        <dt>BIC</dt>
+        <dd>BFSWDE33BER</dd>
 
-<dt>BIC</dt>
-<dd>BFSWDE33BER</dd>
+        <dt>IBAN</dt>
+        <dd>DE54 1002 0500 2592 5110 07</dd>
 
-<dt>IBAN</dt>
-<dd>DE54 1002 0500 2592 5110 07</dd>
+        <dt>Verwendungszweck</dt>
+        <dd>Spende Freiwilligendienst 2025-26</dd>
+      </dl>
 
-<dt>Verwendungszweck</dt>
-<dd>Spende Freiwilligendienst 2025-26</dd>
-</dl>
+      <p>
+        Diese Bankverbindung wurde exklusiv für mich eingerichtet. Der
+        Verwendungszweck ist notwendig und sollte nicht geändert werden.
+      </p>
+    </Answer>
+  </Section>
 
-<p>
-Diese Bankverbindung wurde exklusiv für mich eingerichtet. Der Verwendungszweck
-darf nicht geändert werden.
-</p>
-</Answer>
-</Section>
+  <Section>
+    <Answer name="spenden" title="Wie kann man Spenden steuerlich absetzen?">
+      <p>
+        Für Spenden unter 300 Euro reicht dafür der Beleg der Überweisung. Für
+        höhere Spenden kann man sich gerne an mich wenden, um eine
+        Spendenbescheinigung von der ijgd erstellen zu lassen.
+      </p>
+    </Answer>
+  </Section>
 
-<Section>
-<Answer name="spenden" title="Wie kann man Spenden steuerlich absetzen?">
-<p>
-Für Spenden unter 300 Euro reicht dafür der Beleg der Überweisung. Für höhere
-Spenden kann man sich gerne an mich wenden, um eine Spendenbescheinigung von
-der ijgd erstellen zu lassen.
-</p>
-</Section>
-
+  <style>
+    h1 {
+      margin-top: 0;
+    }
+  </style>
 </Layout>
-
-<style>
-h1 {
-  margin-top: 0;
-}
-
-#in-arbeit {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: var(--gap-inline);
-}
-
-#in-arbeit-icon {
-  font-size: 1.3rem;
-}
-</style>

@@ -1,21 +1,34 @@
 ---
 import Action, { type Props as ActionProps } from "@components/Action.astro";
+import { translations, type Language } from "@i18n";
 import { Icon } from "astro-icon/components";
 
-type Props = ActionProps;
+interface Props extends ActionProps {
+  language: Language;
+}
 
-const { class: className, "class:list": classList, ...props } = Astro.props;
+const {
+  language,
+  class: className,
+  "class:list": classList,
+  ...props
+} = Astro.props;
+const t = translations[language];
 ---
 
-<Action href="/#spenden" class:list={["donate", className, classList]} {...props}>
-<Icon name="eva:heart-fill" />
-Jetzt Spenden
+<Action
+  href={t["donate.href"]}
+  class:list={["donate", className, classList]}
+  {...props}
+>
+  <Icon name="eva:heart-fill" />
+  <Fragment set:html={t["donate.text"]} />
 </Action>
 
 <style>
-.donate {
-  background-color: rgb(var(--color-background-donate));
-  color: rgb(var(--color-text-donate)) !important;
-  border-color: rgb(var(--color-border-donate));
-}
+  .donate {
+    background-color: rgb(var(--color-background-donate));
+    color: rgb(var(--color-text-donate));
+    border-color: rgb(var(--color-border-donate));
+  }
 </style>

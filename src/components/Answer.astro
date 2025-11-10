@@ -1,74 +1,73 @@
 ---
 interface Props extends astroHTML.JSX.DetailsHTMLAttributes {
-	title: string;
+  title?: string;
 }
 
 const {
-	class: className,
-	"class:list": classList,
-	title,
-	...props
+  class: className,
+  "class:list": classList,
+  title,
+  ...props
 } = Astro.props;
 ---
 
 <details class:list={["answer", className, classList]} {...props}>
-<summary class="answer-summary">
-<h3 class="answer-title">
-{title}
-</h3>
-</summary>
+  <summary class="answer-summary">
+    <h3 class="answer-title">
+      <slot name="title">{title}</slot>
+    </h3>
+  </summary>
 
-<div class="answer-content">
-<slot />
-</div>
+  <div class="answer-content">
+    <slot />
+  </div>
 </details>
 
 <style>
-.answer {
-  background-color: rgb(var(--color-background-yellow));
-  border: solid rgb(var(--color-border-yellow)) var(--width-border);
-  border-radius: var(--radius-content);
-}
-
-.answer-summary {
-  width: 100%;
-  padding: var(--padding-content);
-  box-sizing: border-box;
-  cursor: pointer;
-
-  &::marker {
-    content: "";
+  .answer {
+    background-color: rgb(var(--color-background-yellow));
+    border: solid rgb(var(--color-border-yellow)) var(--width-border);
+    border-radius: var(--radius-content);
   }
-}
 
-.answer-title {
-  margin: 0;
-  display: flex;
-  justify-content: space-between;
-  font-size: 1.3rem;
+  .answer-summary {
+    width: 100%;
+    padding: var(--padding-content);
+    box-sizing: border-box;
+    cursor: pointer;
 
-  &::after {
-    content: "+";
+    &::marker {
+      content: "";
+    }
   }
-}
 
-.answer[open] .answer-title {
-  &::after {
-    content: "-";
+  .answer-title {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+
+    &::after {
+      content: "+";
+    }
   }
-}
 
-.answer-content {
-  margin: var(--padding-content);
-  box-sizing: content-box;
-  
-  height: 0;
-  overflow: clip;
-  transition: height 0.5s ease;
-}
+  .answer[open] .answer-title {
+    &::after {
+      content: "-";
+    }
+  }
 
-.answer[open] .answer-content {
-  height: auto;
-}
+  .answer-content {
+    margin: var(--padding-content);
+    box-sizing: content-box;
 
+    height: 0;
+    overflow: clip;
+    transition: height 0.5s ease;
+  }
+
+  .answer[open] .answer-content {
+    height: auto;
+  }
 </style>

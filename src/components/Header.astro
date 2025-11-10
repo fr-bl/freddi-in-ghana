@@ -1,65 +1,85 @@
 ---
 import Donate from "@components/Donate.astro";
 import Link from "@components/Link.astro";
+import { Language, translations } from "@i18n";
 import { Icon } from "astro-icon/components";
+
+interface Props {
+  language: Language;
+}
+
+const { language } = Astro.props;
+const t = translations[language];
+
+const alternativeUrl = new URL(Astro.url);
+if (alternativeUrl.pathname.startsWith("/en")) {
+  alternativeUrl.pathname = alternativeUrl.pathname.slice(3);
+} else {
+  alternativeUrl.pathname = "/en" + alternativeUrl.pathname;
+}
+
+const homeUrl = new URL(t["header.home.href"], Astro.url);
+const blogUrl = new URL(t["header.blog.href"], Astro.url);
+const faqUrl = new URL(t["header.faq.href"], Astro.url);
 ---
 
 <header class="header">
-<nav class="nav">
+  <nav class="nav">
+    <Link class="nav-root" href={homeUrl}>
+      <Icon name="eva:globe-2-outline" />
+      {t["header.home.text"]}
+    </Link>
 
-<Link class="nav-root" href="/#">
-<Icon name="eva:globe-2-outline"/>
-Freddi in Ghana
-</Link>
+    <div class="nav-group">
+      <Link href={alternativeUrl}>
+        <Icon
+          name="eva:globe-outline"
+          title={t["header.change-language.text"]}
+        />
+      </Link>
 
-<div class="nav-group">
-<Link href="/#blog">
-Blog
-</Link>
+      <Link href={blogUrl} set:text={t["header.blog.text"]} />
 
-<Link href="/#faq">
-FAQ
-</Link>
+      <Link href={faqUrl} set:text={t["header.faq.text"]} />
 
-<Donate />
-</div>
-
-</nav>
+      <Donate language={language} />
+    </div>
+  </nav>
 </header>
 
 <style>
-.header {
-  max-width: var(--width-layout);
-  margin: var(--padding-layout) auto;
-}
-
-.nav {
-  width: 100%;
-  white-space: nowrap;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--gap-content);
-}
-
-@media (max-width: 700px) {
-  .nav {
-    flex-direction: column;
+  .header {
+    max-width: var(--width-layout);
+    margin: var(--padding-layout) auto;
   }
-}
 
-.nav-root {
-  font-size: 1.5em;
-  font-weight: var(--weight-title);
-}
+  .nav {
+    width: 100%;
+    white-space: nowrap;
 
-.nav-group {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--gap-content);
-}
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--gap-content);
+  }
+
+  @media (max-width: 700px) {
+    .nav {
+      flex-direction: column;
+    }
+  }
+
+  .nav-root {
+    font-size: 1.5em;
+    font-weight: var(--weight-title);
+  }
+
+  .nav-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--gap-content);
+  }
 </style>

@@ -1,0 +1,29 @@
+---
+import { Icon } from "astro-icon/components";
+import { translations, type Language } from "@i18n";
+
+interface Props {
+  language: Language;
+}
+
+const { language } = Astro.props;
+const t = translations[language];
+---
+
+<p class="wip">
+  <Fragment set:html={t["wip.text"]} />
+  <Icon name="eva:car-outline" class="wip-icon" />
+</p>
+
+<style>
+  .wip {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--gap-inline);
+  }
+
+  .wip-icon {
+    font-size: 1.3rem;
+  }
+</style>

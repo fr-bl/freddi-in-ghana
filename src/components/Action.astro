@@ -8,19 +8,19 @@ const { class: className, "class:list": classList, ...props } = Astro.props;
 ---
 
 <Link class:list={["action", className, classList]} {...props}>
-<slot />
+  <slot />
 </Link>
 
 <style>
-.action {
-  text-decoration: unset;
-  color: unset;
-  padding: var(--padding-content);
+  .action {
+    text-decoration: unset;
+    color: unset;
+    padding: var(--padding-content);
 
-  background-color: rgb(var(--color-background));
-  color: rgb(var(--color-text));
+    background-color: rgb(var(--color-background));
+    color: rgb(var(--color-text));
 
-  border: solid rgb(var(--color-border)) var(--width-border);
-  border-radius: var(--radius-layout);
+    border: solid rgb(var(--color-border)) var(--width-border);
+    border-radius: var(--radius-layout);
   }
 </style>

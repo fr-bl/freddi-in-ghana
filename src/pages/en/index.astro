@@ -1,0 +1,182 @@
+---
+import donateSrc from "@assets/donate.jpg";
+import portraitSrc from "@assets/portrait.jpg";
+
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import { Language } from "@i18n";
+
+import Action from "@components/Action.astro";
+import Answer from "@components/Answer.astro";
+import Donate from "@components/Donate.astro";
+import Figure from "@components/Figure.astro";
+import Row from "@components/Row.astro";
+import Wip from "@components/Wip.astro";
+import Section from "@components/Section.astro";
+import Layout from "@layouts/Base.astro";
+
+const language = Language.English;
+---
+
+<Layout language={language}>
+  <Section>
+    <Row reverse>
+      <Figure
+        alt="Photo of me"
+        caption="© Finn"
+        src={portraitSrc}
+        width={470}
+      />
+
+      <div>
+        <h1>Hello, I am Freddi</h1>
+
+        <p>
+          I'm staying in Ghana for a year to engage in cultural exchange as a
+          weltwärts volunteer! To make this possible for future volunteers, I'm
+          raising donations.
+        </p>
+
+        <Donate language={language} class="standalone" />
+        <Action external href="https://frederick.blaes.ing/"> About me </Action>
+      </div>
+    </Row>
+  </Section>
+
+  <section>
+    <h2 id="blog">Blog</h2>
+
+    <Wip language={language} />
+  </section>
+
+  <Section>
+    <h2 id="faq">Frequently asked questions</h2>
+  </Section>
+
+  <Section>
+    <Answer name="faq" title="What am I doing in Ghana?">
+      <p>
+        Starting September 2025, I'm staying with my lovely host family in Agona
+        Swedru for a year. Here in Swedru, my workmate Fabian and I visit the
+        Swedru School of Business where we assist during ICT lessons and other
+        projects. We also take the opportunity to learn more about life in
+        Ghana.
+      </p>
+    </Answer>
+  </Section>
+
+  <Section>
+    <Answer name="faq" title="What is weltwärts?">
+      <p>
+        The weltwärts programme enables young adults from Germany to participate
+        in voluntary service in the Global South. A weltwärts volunteer service
+        doesn't provide development aids, but rather intends to promote cultural
+        exchange and social engagement. The weltwärts programme is funded by the
+        German Federal Ministry for Economic Cooperation and Development (BMZ).
+      </p>
+
+      <Action external href="https://www.weltwaerts.de/en/">
+        About weltwärts
+      </Action>
+    </Answer>
+  </Section>
+
+  <Section>
+    <Answer name="faq" title="What is the ijgd?">
+      <p>
+        The Internationale Jugendgemeinschaftsdienste (ijgd) is an independent,
+        non-profit organisation that offers voluntary services for young adults.
+        It acts as my sending organisation by organising my voluntary year and
+        working with the local partner organisation.
+      </p>
+
+      <Action external href="https://www.ijgd.de/en/"> About ijgd </Action>
+    </Answer>
+  </Section>
+
+  <Section>
+    <Answer name="faq" title="How much does a weltwärts volunteer year cost?">
+      <p>
+        One year of weltwärts voluntary service costs 12,000 euros, of which 75%
+        is covered by the
+        <abbr title="Federal Ministry for Economic Cooperation and Development">
+          BMZ</abbr
+        >. This includes expenses for seminars, vaccines, insurance, flights,
+        housing, meals and pocket money.
+      </p>
+    </Answer>
+  </Section>
+
+  <Section>
+    <h2 id="donating">Donating</h2>
+  </Section>
+
+  <Section>
+    <Row>
+      <Figure
+        alt="Puzzle piece with a heart symbol"
+        caption="© Pexels"
+        src={donateSrc}
+        width={470}
+      />
+      <div>
+        <h3>Your donation makes a difference!</h3>
+
+        <p>
+          Thank you to everyone who has already donated! Luckily, the expenses
+          of my volunteer year have already been covered by the
+          <abbr
+            title="Federal Ministry for Economic Cooperation and Development"
+          >
+            BMZ</abbr
+          > and the <abbr title="Internationale Jugendgemeinschaftsdiensten">
+            ijgd</abbr
+          >. In an effort to give future volunteers the same opportunity, I am
+          collecting donations totalling € 3,000 for the ijgd.
+        </p>
+      </div>
+    </Row>
+  </Section>
+
+  <Section>
+    <Answer name="spenden" title="How can you donate?">
+      <p>
+        Thank you for considering donating! It is possible to donate either once
+        or over the span of the year. For this purpose, the following bank
+        details may be used.
+      </p>
+    </Answer>
+  </Section>
+
+  <Section>
+    <Answer name="spenden" title="What are the bank details?">
+      <dl>
+        <dt>Account holder's name</dt>
+        <dd>ijgd</dd>
+
+        <dt>Bank name</dt>
+        <dd>Bank für Sozialwirtschaft Berlin</dd>
+
+        <dt>Bank number</dt>
+        <dd>BFSWDE33BER</dd>
+
+        <dt>IBAN</dt>
+        <dd>DE54 1002 0500 2592 5110 07</dd>
+
+        <dt>Memo</dt>
+        <dd>Spende Freiwilligendienst 2025-26</dd>
+      </dl>
+
+      <p>
+        This bank account has been set up exclusively for me. The memo is
+        mandatory and may not be modified.
+      </p>
+    </Answer>
+  </Section>
+</Layout>
+
+<style>
+  h1 {
+    margin-top: 0;
+  }
+</style>

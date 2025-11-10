@@ -24,9 +24,10 @@
           projectRootFile = "flake.nix";
           programs = {
             alejandra.enable = true;
-            biome = {
+            prettier = {
               enable = true;
               includes = ["*.astro"];
+              settings.plugins = ["prettier-plugin-astro"];
             };
           };
         };
