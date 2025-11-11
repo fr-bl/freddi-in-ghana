@@ -1,6 +1,5 @@
 ---
 import "@fontsource-variable/hanken-grotesk";
-import "@styles/variables.css";
 import "@styles/global.css";
 
 import { Language } from "@i18n";
@@ -32,6 +31,8 @@ const { language } = Astro.props;
 </html>
 
 <style>
+  @import "@styles/variables.css";
+
   main {
     max-width: var(--width-layout);
     margin: 0 auto;

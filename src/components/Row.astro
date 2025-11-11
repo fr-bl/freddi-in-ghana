@@ -16,6 +16,8 @@ const {
 </div>
 
 <style>
+  @import "@styles/variables.css";
+
   .row {
     display: flex;
     flex-direction: row;
@@ -26,13 +28,11 @@ const {
       flex-direction: row-reverse;
     }
 
-    > * {
+    > :global(*) {
       flex: 1 1 0;
     }
-  }
 
-  @media (max-width: 750px) {
-    .row {
+    @media (max-width: var(--width-layout-mobile)) {
       flex-direction: column !important;
       gap: 0 !important;
     }

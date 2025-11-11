@@ -1,3 +1,5 @@
+@import "@styles/variables.css";
+
 :root {
   /* biome-ignore lint/correctness/noUnknownProperty: new css property */
   interpolate-size: allow-keywords;
@@ -22,7 +24,7 @@ h1,
 h2,
 h3 {
   text-wrap: balance;
-  font-weight: var(--weight-layout);
+  font-weight: var(--weight-title);
 }
 
 h1 {

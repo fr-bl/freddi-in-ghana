@@ -48,6 +48,8 @@ const faqUrl = new URL(t["header.faq.href"], Astro.url);
 </header>
 
 <style>
+  @import "@styles/variables.css";
+
   .header {
     max-width: var(--width-layout);
     margin: var(--padding-layout) auto;
@@ -62,10 +64,8 @@ const faqUrl = new URL(t["header.faq.href"], Astro.url);
     justify-content: space-between;
     align-items: center;
     gap: var(--gap-content);
-  }
 
-  @media (max-width: 650px) {
-    .nav {
+    @media (max-width: var(--width-layout-mobile)) {
       flex-direction: column;
     }
   }

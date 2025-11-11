@@ -24,16 +24,16 @@ const width =
 />
 
 <style>
+  @import "@styles/variables.css";
+
   .image {
     background-color: rgb(var(--color-background-yellow));
     border: solid rgb(var(--color-border-yellow)) var(--width-border);
     border-radius: var(--radius-layout);
     width: 100%;
     height: auto;
-  }
 
-  @media (max-width: 750px) {
-    .image {
+    @media (max-width: var(--width-layout-mobile)) {
       max-width: 300px;
     }
   }

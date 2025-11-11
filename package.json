@@ -14,9 +14,15 @@
 		"@iconify-json/eva": "^1.2.3",
 		"astro": "^5.14.5",
 		"astro-icon": "^1.1.5",
+		"autoprefixer": "^10.4.22",
+		"cssnano": "^7.1.2",
+		"postcss-css-variables": "^0.19.0",
+		"postcss-import": "^16.1.1",
+		"postcss-nesting": "^13.0.2",
 		"sharp": "^0.34.4"
 	},
 	"devDependencies": {
+		"@types/postcss-css-variables": "^0.18.3",
 		"prettier-plugin-astro": "^0.14.1"
 	}
 }
