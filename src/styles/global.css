@@ -66,3 +66,7 @@ dd {
 dd + dt {
   margin-top: 0.5rem;
 }
+
+img {
+  display: block;
+}

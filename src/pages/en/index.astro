@@ -2,10 +2,9 @@
 import donateSrc from "@assets/donate.jpg";
 import portraitSrc from "@assets/portrait.jpg";
 
-import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
 import { Language } from "@i18n";
 
+import { Icon } from "astro-icon/components";
 import Action from "@components/Action.astro";
 import Answer from "@components/Answer.astro";
 import Donate from "@components/Donate.astro";
@@ -13,6 +12,7 @@ import Figure from "@components/Figure.astro";
 import Row from "@components/Row.astro";
 import Wip from "@components/Wip.astro";
 import Section from "@components/Section.astro";
+import Image from "@components/Image.astro";
 import Layout from "@layouts/Base.astro";
 
 const language = Language.English;
@@ -21,12 +21,15 @@ const language = Language.English;
 <Layout language={language}>
   <Section>
     <Row reverse>
-      <Figure
-        alt="Photo of me"
-        caption="© Finn"
-        src={portraitSrc}
-        width={470}
-      />
+      <Figure caption="© Finn">
+        <Image
+          alt="Photo of me"
+          src={portraitSrc}
+          width={470}
+          layout="constrained"
+          priority
+        />
+      </Figure>
 
       <div>
         <h1>Hello, I am Freddi</h1>
@@ -113,12 +116,14 @@ const language = Language.English;
 
   <Section>
     <Row>
-      <Figure
-        alt="Puzzle piece with a heart symbol"
-        caption="© Pexels"
-        src={donateSrc}
-        width={470}
-      />
+      <Figure caption="© Pexels">
+        <Image
+          alt="Puzzle piece with a heart symbol"
+          src={donateSrc}
+          width={470}
+          layout="constrained"
+        />
+      </Figure>
       <div>
         <h3>Your donation makes a difference!</h3>
 

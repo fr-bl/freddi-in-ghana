@@ -1,10 +1,8 @@
 ---
+import { Language } from "@i18n";
+
 import donateSrc from "@assets/donate.jpg";
 import portraitSrc from "@assets/portrait.jpg";
-
-import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
-import { Language } from "@i18n";
 
 import Action from "@components/Action.astro";
 import Answer from "@components/Answer.astro";
@@ -13,6 +11,8 @@ import Figure from "@components/Figure.astro";
 import Row from "@components/Row.astro";
 import Wip from "@components/Wip.astro";
 import Section from "@components/Section.astro";
+import Image from "@components/Image.astro";
+import { Icon } from "astro-icon/components";
 import Layout from "@layouts/Base.astro";
 
 const language = Language.German;
@@ -21,12 +21,15 @@ const language = Language.German;
 <Layout language={language}>
   <Section>
     <Row reverse>
-      <Figure
-        alt="Foto von mir"
-        caption="© Finn"
-        src={portraitSrc}
-        width={470}
-      />
+      <Figure caption="© Finn">
+        <Image
+          alt="Foto von mir"
+          src={portraitSrc}
+          width={470}
+          layout="constrained"
+          priority
+        />
+      </Figure>
 
       <div>
         <h1>Hallo, ich bin Freddi</h1>
@@ -118,12 +121,14 @@ const language = Language.German;
 
   <Section>
     <Row>
-      <Figure
-        alt="Puzzleteil mit einem Herz-Symbol"
-        caption="© Pexels"
-        src={donateSrc}
-        width={470}
-      />
+      <Figure caption="© Pexels">
+        <Image
+          src={donateSrc}
+          alt="Puzzleteil mit einem Herz-Symbol"
+          width={470}
+          layout="constrained"
+        />
+      </Figure>
       <div>
         <h3>Jede Spende zählt!</h3>
 
