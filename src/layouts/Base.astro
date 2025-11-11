@@ -10,14 +10,16 @@ import Head from "@components/Head.astro";
 
 interface Props {
   language: Language;
+  title?: string;
+  description?: string;
 }
 
-const { language } = Astro.props;
+const { language, title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang={language}>
-  <Head language={language} />
+  <Head language={language} title={title} description={description}/>
 
   <body>
     <Header language={language} />

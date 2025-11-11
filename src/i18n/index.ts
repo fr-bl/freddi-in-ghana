@@ -10,6 +10,7 @@ export const defaultLanguage = Language.German;
 
 export const defaultTranslations = {
   "head.title.text": "Freddi in Ghana",
+  "head.title.description": "Ich bin als Freiwilliger ein Jahr in Ghana und sammle dafür Spenden!",
   "head.author.href": "https://frederick.blaes.ing",
   "head.license.href": "#lizenz",
 
@@ -36,6 +37,7 @@ export const translations: Translations = {
   [Language.German]: defaultTranslations,
   [Language.English]: {
     ...defaultTranslations,
+  "head.title.description": "I'm volunteering in Ghana for a year. Help by donating!",
     "head.license.href": "#license",
     "header.home.href": "/en/#",
     "header.blog.href": "/en/#blog",

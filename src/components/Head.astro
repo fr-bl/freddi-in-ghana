@@ -3,15 +3,18 @@ import { translations, Language } from "@i18n";
 
 interface Props {
   language: Language;
+  title?: string;
+  description?: string;
 }
 
-const { language } = Astro.props;
+const { language, title, description } = Astro.props;
 const t = translations[language];
 ---
 
 <head>
   <meta charset="utf-8" />
-  <title set:text={t["head.title.text"]} />
+  <title set:text={title ?? t["head.title.text"]} />
+  <meta name="description" content={description ?? t["head.title.description"]} />
   <link rel="license" href={t["head.license.href"]} />
   <link rel="author" href={t["head.author.href"]} />
 
