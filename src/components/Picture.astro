@@ -7,7 +7,6 @@ export type Props = AstroPictureProps;
 let { class: className, "class:list": classList, formats, ...props } = Astro.props;
 
 formats ??= ["avif", "webp"];
-console.log(formats);
 ---
 
 <AstroPicture class:list={["picture", className, classList]} formats={formats} {...props} />
@@ -17,5 +16,13 @@ console.log(formats);
     background-color: var(--color-background-yellow);
     border: solid rgb(var(--color-border-yellow)) var(--width-border);
     border-radius: var(--radius-layout);
+    width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 750px) {
+    .picture {
+      max-width: 300px;
+    }
   }
 </style>
