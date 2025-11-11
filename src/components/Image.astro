@@ -4,10 +4,10 @@ import { Image as AstroImage } from "astro:assets";
 
 export type Props = LocalImageProps | RemoteImageProps;
 
-const { class: className, "class:list": classList, ...props } = Astro.props;
+const { widths = [], class: className, "class:list": classList, ...props } = Astro.props;
 ---
 
-<AstroImage class:list={["image", className, classList]} {...props} />
+<AstroImage widths={[...widths, 300]} class:list={["image", className, classList]} {...props} />
 
 <style>
   .image {
