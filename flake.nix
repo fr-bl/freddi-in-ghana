@@ -34,7 +34,7 @@
       in {
         formatter = (treefmt-nix.lib.evalModule pkgs treefmtCfg).config.build.wrapper;
         devShells.default = pkgs.mkShell {
-          packages = [pkgs.bun];
+          packages = [pkgs.bun pkgs.google-lighthouse];
         };
       }
     );
