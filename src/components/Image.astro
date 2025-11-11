@@ -1,10 +1,14 @@
 ---
 import type { LocalImageProps, RemoteImageProps } from "astro:assets";
-import { Image as AstroImage } from "astro:assets";
+import { Image as AstroImage, inferRemoteSize } from "astro:assets";
 
 export type Props = LocalImageProps | RemoteImageProps;
 
 const { widths = [], class: className, "class:list": classList, ...props } = Astro.props;
+
+const width = typeof props.width === "string"
+  ? parseInt(props.width)
+  : props.width ?? (await inferRemoteSize(props.src as string)).width;
 ---
 
 <AstroImage widths={[...widths, 300]} class:list={["image", className, classList]} {...props} />

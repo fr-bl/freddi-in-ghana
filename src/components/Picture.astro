@@ -1,15 +1,18 @@
 ---
-import { Picture as AstroPicture} from "astro:assets";
+import { Picture as AstroPicture, inferRemoteSize } from "astro:assets";
 import type { Props as AstroPictureProps } from "astro/components/Picture.astro";
 
 export type Props = AstroPictureProps;
 
 let { widths = [], class: className, "class:list": classList, formats, ...props } = Astro.props;
 
+const width = typeof props.width === "string"
+  ? parseInt(props.width)
+  : props.width ?? (await inferRemoteSize(props.src as string)).width;
 formats ??= ["avif", "webp"];
 ---
 
-<AstroPicture widths={[...widths, 300]} class:list={["picture", className, classList]} formats={formats} {...props} />
+<AstroPicture widths={[...widths, width, 300]} class:list={["picture", className, classList]} formats={formats} {...props} />
 
 <style>
   .picture {
