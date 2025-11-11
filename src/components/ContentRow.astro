@@ -1,0 +1,23 @@
+---
+export type Props = astroHTML.JSX.HTMLAttributes;
+
+const {
+  class: className,
+  "class:list": classList,
+  ...props
+} = Astro.props;
+---
+
+<div class:list={["content-row", className, classList]} {...props}>
+  <slot />
+</div>
+
+<style>
+  .content-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--gap-content);
+  }
+</style>

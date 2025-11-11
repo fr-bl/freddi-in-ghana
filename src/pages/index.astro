@@ -9,6 +9,7 @@ import Answer from "@components/Answer.astro";
 import Donate from "@components/Donate.astro";
 import Figure from "@components/Figure.astro";
 import Row from "@components/Row.astro";
+import ContentRow from "@components/ContentRow.astro";
 import Wip from "@components/Wip.astro";
 import Section from "@components/Section.astro";
 import Picture from "@components/Picture.astro";
@@ -40,10 +41,12 @@ const language = Language.German;
           zu ermöglichen, sammle ich Spenden.
         </p>
 
-        <Donate language={language} class="standalone" />
-        <Action external href="https://frederick.blaes.ing/">
-          Über mich
-        </Action>
+        <ContentRow>
+          <Donate language={language} class="standalone" />
+          <Action external href="https://frederick.blaes.ing/">
+            Über mich
+          </Action>
+        </ContentRow>
       </div>
     </Row>
   </Section>
