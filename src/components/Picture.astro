@@ -4,7 +4,7 @@ import type { Props as AstroPictureProps } from "astro/components/Picture.astro"
 
 export type Props = AstroPictureProps;
 
-let {
+const {
   widths = [],
   class: className,
   "class:list": classList,
@@ -16,13 +16,12 @@ const width =
   typeof props.width === "string"
     ? parseInt(props.width)
     : (props.width ?? (await inferRemoteSize(props.src as string)).width);
-formats ??= ["avif", "webp"];
 ---
 
 <AstroPicture
   widths={[...widths, width, 300]}
   class:list={["picture", className, classList]}
-  formats={formats}
+  formats={formats ?? ["avif", "webp"]}
   {...props}
 />
 
