@@ -10,7 +10,7 @@ import Answer from "@components/Answer.astro";
 import Donate from "@components/Donate.astro";
 import Figure from "@components/Figure.astro";
 import Row from "@components/Row.astro";
-import ContentRow from "@components/ContentRow.astro"
+import ContentRow from "@components/ContentRow.astro";
 import Wip from "@components/Wip.astro";
 import Section from "@components/Section.astro";
 import Picture from "@components/Picture.astro";
@@ -43,7 +43,9 @@ const language = Language.English;
 
         <ContentRow>
           <Donate language={language} class="standalone" />
-          <Action external href="https://frederick.blaes.ing/"> About me </Action>
+          <Action external href="https://frederick.blaes.ing/">
+            About me
+          </Action>
         </ContentRow>
       </div>
     </Row>
@@ -182,4 +184,3 @@ const language = Language.English;
     </Answer>
   </Section>
 </Layout>
-</style>

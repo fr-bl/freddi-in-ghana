@@ -1,11 +1,7 @@
 ---
 export type Props = astroHTML.JSX.HTMLAttributes;
 
-const {
-  class: className,
-  "class:list": classList,
-  ...props
-} = Astro.props;
+const { class: className, "class:list": classList, ...props } = Astro.props;
 ---
 
 <div class:list={["content-row", className, classList]} {...props}>

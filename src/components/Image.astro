@@ -4,14 +4,24 @@ import { Image as AstroImage, inferRemoteSize } from "astro:assets";
 
 export type Props = LocalImageProps | RemoteImageProps;
 
-const { widths = [], class: className, "class:list": classList, ...props } = Astro.props;
+const {
+  widths = [],
+  class: className,
+  "class:list": classList,
+  ...props
+} = Astro.props;
 
-const width = typeof props.width === "string"
-  ? parseInt(props.width)
-  : props.width ?? (await inferRemoteSize(props.src as string)).width;
+const width =
+  typeof props.width === "string"
+    ? parseInt(props.width)
+    : (props.width ?? (await inferRemoteSize(props.src as string)).width);
 ---
 
-<AstroImage widths={[...widths, 300]} class:list={["image", className, classList]} {...props} />
+<AstroImage
+  widths={[...widths, 300]}
+  class:list={["image", className, classList]}
+  {...props}
+/>
 
 <style>
   .image {
