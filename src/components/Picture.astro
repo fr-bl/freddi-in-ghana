@@ -1,0 +1,21 @@
+---
+import { Picture as AstroPicture} from "astro:assets";
+import type { Props as AstroPictureProps } from "astro/components/Picture.astro";
+
+export type Props = AstroPictureProps;
+
+let { class: className, "class:list": classList, formats, ...props } = Astro.props;
+
+formats ??= ["avif", "webp"];
+console.log(formats);
+---
+
+<AstroPicture class:list={["picture", className, classList]} formats={formats} {...props} />
+
+<style>
+  .picture {
+    background-color: var(--color-background-yellow);
+    border: solid rgb(var(--color-border-yellow)) var(--width-border);
+    border-radius: var(--radius-layout);
+  }
+</style>

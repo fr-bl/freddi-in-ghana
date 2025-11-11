@@ -11,7 +11,7 @@ import Figure from "@components/Figure.astro";
 import Row from "@components/Row.astro";
 import Wip from "@components/Wip.astro";
 import Section from "@components/Section.astro";
-import Image from "@components/Image.astro";
+import Picture from "@components/Picture.astro";
 import { Icon } from "astro-icon/components";
 import Layout from "@layouts/Base.astro";
 
@@ -22,7 +22,7 @@ const language = Language.German;
   <Section>
     <Row reverse>
       <Figure caption="© Finn">
-        <Image
+        <Picture
           alt="Foto von mir"
           src={portraitSrc}
           width={470}
@@ -122,7 +122,7 @@ const language = Language.German;
   <Section>
     <Row>
       <Figure caption="© Pexels">
-        <Image
+        <Picture
           src={donateSrc}
           alt="Puzzleteil mit einem Herz-Symbol"
           width={470}

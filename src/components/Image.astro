@@ -1,40 +1,18 @@
 ---
 import type { LocalImageProps, RemoteImageProps } from "astro:assets";
-import { getImage, inferRemoteSize, Image as AstroImage } from "astro:assets";
+import { Image as AstroImage } from "astro:assets";
 
 export type Props = LocalImageProps | RemoteImageProps;
 
-const { style, ...props } = Astro.props;
-const { src } = Astro.props;
-
-const { width, height } =
-  typeof src == "string"
-    ? await inferRemoteSize(src)
-    : src instanceof Promise
-      ? (await src).default
-      : src;
-
-const size = Math.max(width, height);
-const previewSize = 16;
-const previewWidth = Math.floor((width / size) * previewSize);
-const previewHeight = Math.floor((height / size) * previewSize);
-
-const preview = await getImage({
-  src: Astro.props.src,
-  width: previewWidth,
-  height: previewHeight,
-});
-const previewStyle: astroHTML.JSX.CSSProperties = {
-  backgroundImage: `url(${preview.src})`,
-};
+const { class: className, "class:list": classList, ...props } = Astro.props;
 ---
 
-<AstroImage class="image" style={previewStyle} {...props} />
+<AstroImage class:list={["image", className, classList]} {...props} />
 
 <style>
   .image {
+    background-color: var(--color-background-yellow);
     border: solid rgb(var(--color-border-yellow)) var(--width-border);
     border-radius: var(--radius-layout);
-    background-size: 100% 100%;
   }
 </style>
