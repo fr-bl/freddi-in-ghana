@@ -15,7 +15,10 @@ const t = translations[language];
 <head>
   <meta charset="utf-8" />
   <title set:text={title ?? t["head.title.text"]} />
-  <meta name="description" content={description ?? t["head.title.description"]} />
+  <meta
+    name="description"
+    content={description ?? t["head.title.description"]}
+  />
   <link rel="license" href={t["head.license.href"]} />
   <link rel="author" href={t["head.author.href"]} />
 

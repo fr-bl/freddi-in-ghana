@@ -52,7 +52,6 @@ const { class: className, "class:list": classList, ...props } = Astro.props;
   const sections = document.getElementsByClassName("section");
 
   for (const section of sections) {
-    console.log(section);
     section.classList.add("hide");
     observer.observe(section);
   }

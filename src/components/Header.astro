@@ -65,7 +65,7 @@ const faqUrl = new URL(t["header.faq.href"], Astro.url);
     align-items: center;
     gap: var(--gap-content);
 
-    @media (max-width: var(--width-layout-mobile)) {
+    @media (--media-layout-mobile) {
       flex-direction: column;
     }
   }

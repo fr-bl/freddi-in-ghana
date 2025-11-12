@@ -14,7 +14,6 @@
   --color-text-action: 250, 250, 245;
   --color-shadow: 0, 0, 0;
   --width-layout: 1000px;
-  --width-layout-mobile: 750px;
   --width-content: 600px;
   --width-border: 1px;
   --gap-content: 1rem;
@@ -31,3 +30,5 @@
   --duration-animation: 0.5s;
   --offset-reveal: 3rem;
 }
+
+@custom-media --media-layout-mobile (max-width: 750px);
