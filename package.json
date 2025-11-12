@@ -10,7 +10,6 @@
 	},
 	"dependencies": {
 		"@astrojs/mdx": "^4.3.10",
-		"@fontsource-variable/hanken-grotesk": "^5.2.8",
 		"@iconify-json/eva": "^1.2.3",
 		"@playform/inline": "^0.1.2",
 		"astro": "^5.14.5",
@@ -24,6 +23,7 @@
 	},
 	"devDependencies": {
 		"@types/postcss-css-variables": "^0.18.3",
+		"@types/postcss-import": "^14.0.3",
 		"prettier-plugin-astro": "^0.14.1"
 	}
 }

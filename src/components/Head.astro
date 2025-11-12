@@ -1,5 +1,6 @@
 ---
 import { translations, Language } from "@i18n";
+import { Font } from "astro:assets";
 
 interface Props {
   language: Language;
@@ -23,4 +24,6 @@ const t = translations[language];
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <Font cssVariable="--font-hanken-grotesk" preload />
 </head>

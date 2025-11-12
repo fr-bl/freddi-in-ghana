@@ -10,6 +10,9 @@ node_modules/
 # direnv
 .direnv/
 
+# lighthouse
+*.report.html
+
 # logs
 npm-debug.log*
 yarn-debug.log*

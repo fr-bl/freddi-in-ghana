@@ -5,5 +5,7 @@ import nesting from "postcss-nesting";
 import cssnano from "cssnano";
 
 export default {
-  plugins: [atImport, cssVariables, autoprefixer, nesting, cssnano],
+  plugins: [atImport, nesting, cssVariables({
+    preserve: (declaration) => declaration.value.includes("--font"),
+  }), autoprefixer, cssnano],
 };

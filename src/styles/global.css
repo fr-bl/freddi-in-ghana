@@ -12,7 +12,7 @@
 }
 
 body {
-  font-family: "Hanken Grotesk Variable", sans-serif;
+  font-family: var(--font-hanken-grotesk);
   background: rgb(var(--color-background));
   color: rgb(var(--color-text));
   font-size: 1.1rem;
