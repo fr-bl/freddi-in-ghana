@@ -23,7 +23,7 @@ export default defineConfig({
             provider: fontProviders.fontsource(),
             name: "Hanken Grotesk",
             cssVariable: "--font-hanken-grotesk",
-            styles: ["normal"],
+            styles: ["normal", "italic"],
             subsets: ["latin"],
             fallbacks: ["Arial", "sans-serif"]
         }]
