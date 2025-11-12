@@ -8,8 +8,7 @@ export default defineConfig({
     site: "https://www.freddi-in-ghana.de",
     integrations: [icon(), mdx(), inline()],
     image: {
-        // service: import.meta.env.DEV ? passthroughImageService() : undefined,
-        service: passthroughImageService(),
+        service: import.meta.env.DEV ? passthroughImageService() : undefined,
     },
     vite: {
         server: {
