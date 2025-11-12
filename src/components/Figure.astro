@@ -22,15 +22,15 @@ const { caption } = Astro.props;
   }
 
   .figure-caption {
+    padding: 0 var(--padding-inline);
     position: absolute;
-    bottom: 1em;
-    left: 1.5em;
+    bottom: 1.3rem;
+    left: 1.3rem;
 
-    color: white;
-    text-shadow:
-      0 2px 0.1em black,
-      0 -2px 0.1em black,
-      2px 0 0.1em black,
-      -2px 0 0.1em black;
+    background-color: rgb(var(--color-background));
+    border-style: solid;
+    border-color: rgb(var(--color-border));
+    border-width: var(--width-border);
+    border-radius: var(--radius-content);
   }
 </style>

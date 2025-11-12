@@ -27,11 +27,14 @@ const width =
   @import "@styles/variables.css";
 
   .image {
-    background-color: rgb(var(--color-background-box));
-    border: solid rgb(var(--color-border)) var(--width-border);
-    border-radius: var(--radius-layout);
     width: 100%;
     height: auto;
+    background-color: rgb(var(--color-background-box));
+    
+    border-style: solid;
+    border-color: rgb(var(--color-border));
+    border-width: var(--width-border);
+    border-radius: var(--radius-layout);
 
     @media (--media-layout-mobile) {
       max-width: 300px;

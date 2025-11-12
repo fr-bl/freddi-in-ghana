@@ -20,9 +20,9 @@ const { class: className, "class:list": classList, ...props } = Astro.props;
     padding: var(--padding-content);
 
     background-color: rgb(var(--color-background-box));
-    color: rgb(var(--color-text));
-
-    border: solid rgb(var(--color-border)) var(--width-border);
+    border-style: solid;
+    border-color: rgb(var(--color-border));
+    border-width: var(--width-border);
     border-radius: var(--radius-layout);
   }
 </style>
